@@ -4,7 +4,8 @@
       Hello world!
     </h1>
     <button class="btn btn-secondary">
-      Primary
+      View Map
+      <Icon name="tabler:map" size="32" />
     </button>
   </div>
 </template>
