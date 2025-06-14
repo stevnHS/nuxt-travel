@@ -2,8 +2,10 @@
 const colorMode = useColorMode();
 
 const isDark = computed({
-  get: () => colorMode.preference === "dark",
-  set: (value: boolean) => {
+  get() {
+    return colorMode.value === "dark";
+  },
+  set(value) {
     colorMode.preference = value ? "dark" : "light";
   },
 });
@@ -13,13 +15,13 @@ const isDark = computed({
   <label class="swap swap-rotate mx-4">
     <input v-model="isDark" type="checkbox">
     <Icon
+      class="swap-on"
       name="tabler:sun"
-      class="swap-on h-10 w-10 fill-current"
       size="24"
     />
     <Icon
+      class="swap-off"
       name="tabler:moon-filled"
-      class="swap-off h-10 w-10 fill-current"
       size="24"
     />
   </label>
